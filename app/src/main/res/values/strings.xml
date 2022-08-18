@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">HomeActivity</string>
     <string name="list_image_description">List Image</string>
+    <string name="view_pager_item_cd">Image</string>
 </resources>

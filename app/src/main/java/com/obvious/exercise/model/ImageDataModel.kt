@@ -1,5 +1,9 @@
 package com.obvious.exercise.model
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class ImageDataModel(
     val copyright: String,
     val date: String,
@@ -9,4 +13,4 @@ data class ImageDataModel(
     val service_version: String,
     val title: String,
     val url: String
-)
+) : Parcelable

@@ -7,8 +7,8 @@ import com.obvious.exercise.repository.LocalImageRepository
 class HomeViewModel :
     ViewModel() {
 
-    fun getImageDataList(): LiveData<List<ImageData>> {
-        val dataRepository = LocalImageRepository<LiveData<List<ImageData>>>(MyApp.appContext)
+    fun getImageDataList(): LiveData<ArrayList<ImageData>> {
+        val dataRepository = LocalImageRepository<LiveData<ArrayList<ImageData>>>(MyApp.appContext)
         return dataRepository.getData()
     }
 }

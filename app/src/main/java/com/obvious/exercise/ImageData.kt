@@ -1,8 +1,14 @@
 package com.obvious.exercise
 
+import android.os.Parcelable
 import com.obvious.exercise.model.ImageDataModel
+import kotlinx.parcelize.IgnoredOnParcel
 
-class ImageData : BaseData() {
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
+class ImageData : BaseData(), Parcelable {
+    @IgnoredOnParcel
     private lateinit var imageDataModel: ImageDataModel
     override fun getViewTypeId(): Int {
         return Constants.VIEW_TYPE_IMAGE
