@@ -1,24 +1,25 @@
-package com.obvious.exercise
+package com.obvious.exercise.viewholder
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.obvious.homeactivity.R
+import com.obvious.exercise.R
 
 class ViewHolderFactory : VHFactory {
-    override fun getFieldViewHolder(
+    override fun getViewHolder(
         context: Context,
         parent: ViewGroup,
-        viewType: ViewType
-    ): BaseViewHolder {
+        viewType: Int
+    ): BaseViewHolder? {
         val inflater = LayoutInflater.from(parent.context)
         val view: View
         when (viewType) {
-            ViewType.VIEW_TYPE_IMAGE -> {
+            1 -> {
                 view = inflater.inflate(R.layout.list_item, parent, false)
                 return ImagesViewHolder(context, view)
             }
         }
+        return null
     }
 }

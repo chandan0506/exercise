@@ -1,10 +1,18 @@
 package com.obvious.exercise
 
+import com.obvious.exercise.model.ImageDataModel
+
 class ImageData : BaseData() {
-    override fun getViewTypeId(): ViewType {
-        return ViewType.VIEW_TYPE_IMAGE
+    private lateinit var imageDataModel: ImageDataModel
+    override fun getViewTypeId(): Int {
+        return Constants.VIEW_TYPE_IMAGE
     }
-    override fun getImageUrl(): String {
-        return ""
+
+    override fun getImageData(): ImageDataModel {
+        return imageDataModel
+    }
+
+    override fun setImageData(imageDataModel: ImageDataModel) {
+        this.imageDataModel = imageDataModel
     }
 }

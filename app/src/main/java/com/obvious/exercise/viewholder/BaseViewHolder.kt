@@ -1,8 +1,9 @@
-package com.obvious.exercise
+package com.obvious.exercise.viewholder
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
+import com.obvious.exercise.BaseData
 
 abstract class BaseViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView) {
-    abstract fun bind(position:Int, baseListData: BaseData)
+    abstract fun bind(position:Int, baseListData: List<BaseData>)
 }

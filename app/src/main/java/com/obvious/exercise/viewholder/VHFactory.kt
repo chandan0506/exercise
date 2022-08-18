@@ -1,13 +1,12 @@
-package com.obvious.exercise
+package com.obvious.exercise.viewholder
 
 import android.content.Context
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 
 interface VHFactory {
-    fun getFieldViewHolder(
+    fun getViewHolder(
         context: Context,
         parent: ViewGroup,
-        viewType: ViewType
+        viewType: Int
     ): BaseViewHolder?
 }
