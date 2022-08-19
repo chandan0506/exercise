@@ -2,6 +2,7 @@ package com.obvious.exercise.adapter
 
 import android.content.Context
 import android.graphics.drawable.Drawable
+import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -47,10 +48,13 @@ class DetailsViewPagerAdapter(
         val progressBar = itemView.findViewById(R.id.progressBarDetail) as ProgressBar
         title.text = mImageList[position].getImageData().title
         description.text = mImageList[position].getImageData().explanation
-        copyright.text = mContext.getString(
-            R.string.copyright_text,
-            mImageList[position].getImageData().copyright
-        )
+        val copyrightText = mImageList[position].getImageData().copyright
+        if (!TextUtils.isEmpty(copyrightText)) {
+            copyright.text = mContext.getString(
+                R.string.copyright_text,
+                mImageList[position].getImageData().copyright
+            )
+        }
         loadImage(imageView, position, progressBar)
         container.addView(itemView)
         return itemView
