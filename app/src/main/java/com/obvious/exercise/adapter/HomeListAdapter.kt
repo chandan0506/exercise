@@ -1,7 +1,9 @@
-package com.obvious.exercise
+package com.obvious.exercise.adapter
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.obvious.exercise.ImageData
+import com.obvious.exercise.OnItemClick
 import com.obvious.exercise.viewholder.BaseViewHolder
 import com.obvious.exercise.viewholder.ViewHolderFactory
 

@@ -1,5 +1,6 @@
 <resources>
-    <string name="app_name">HomeActivity</string>
+    <string name="app_name">Obvious</string>
     <string name="list_image_description">List Image</string>
     <string name="view_pager_item_cd">Image</string>
+    <string name="copyright_text">\@ %1$s</string>
 </resources>

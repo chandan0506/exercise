@@ -9,14 +9,17 @@ import java.nio.charset.Charset
 class Constants {
     companion object {
         var VIEW_TYPE_IMAGE: Int = 1
-        var ITEM_CLICK_POSITION:String = "object_image_list"
+        var ITEM_CLICK_POSITION: String = "object_image_list"
 
         private fun getDataList(context: Context): ArrayList<ImageDataModel> {
             val gson = Gson()
-            return gson.fromJson(getDataFromJson(context), object : TypeToken<List<ImageDataModel>>() {}.type)
+            return gson.fromJson(
+                getDataFromJson(context),
+                object : TypeToken<List<ImageDataModel>>() {}.type
+            )
         }
 
-        private fun getDataFromJson(context:Context): String {
+        private fun getDataFromJson(context: Context): String {
             var json = ""
             try {
                 val inputStream = context.assets.open("data.json")
@@ -41,8 +44,12 @@ class Constants {
             return listImageData
         }
 
-        public fun getImageList(context: Context): ArrayList<ImageData> {
+        fun getImageList(context: Context): ArrayList<ImageData> {
             return getImageData(getDataList(context))
+        }
+
+        fun sortImageList(list: ArrayList<ImageData>?) {
+            list?.sortWith { o1, o2 -> ((o2?.getImageData()?.date)!!.compareTo(o1?.getImageData()!!.date)) }
         }
     }
 }
